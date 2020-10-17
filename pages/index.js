@@ -3,24 +3,22 @@ import { useEffect } from 'react'
 import styles from '../styles/SpaceX.module.css'
 import FilterCard from '../components/filter';
 import SpaceXCard from '../components/spaceXData';
-import { useSelector } from "react-redux";
-import { useRouter } from 'next/router';
 import { parseCookies } from 'nookies';
-
+import {setCookieFunc } from 'utils';
+import {setLandFilter,setLaunchFilter,setLaunchYearFilter} from '../redux/actions/FilterActions';
+import { useSelector, useDispatch } from "react-redux";
 
 export default function SpaceX() {
+  const dispatch = useDispatch();
   const filterState = useSelector((state) => state.FilterReducer);
   const {launchYearFilter, landFilter, launchFilter} = filterState;
-  const cookies = parseCookies();
-  const router = useRouter();
+  const cookies = parseCookies();  
 
     useEffect(() => {
-        setURL();
-    }, [launchYearFilter, landFilter, launchFilter])
-
-    const setURL = () => {
-      router.push(`/?launch_success=${cookies.launchFilter || ''}&&land_success=${cookies.landFilter || ''}&&launch_year=${cookies.launchYearFilter || ''}`);
-  }
+      dispatch(setLaunchYearFilter(cookies.launchYearFilter || launchYearFilter));
+      dispatch(setLaunchFilter(cookies.launchFilter || launchFilter));
+      dispatch(setLandFilter(cookies.landFilter || landFilter));
+    },[]);
 
   return (
     <div className={styles.container}>

@@ -1,40 +1,31 @@
-import {  setCookie,destroyCookie } from 'nookies'
+import {setCookieFunc } from 'utils';
 export const SET_LAUNCH_YEAR_FILTER = 'SET_LAUNCH_YEAR_FILTER';
 export const SET_LAND_FILTER = 'SET_LAND_FILTER';
 export const SET_LAUNCH_FILTER = 'SET_LAUNCH_FILTER';
 
 const initialFilterState = {
-    launchYearFilter: null,
-    landFilter: null,
-    launchFilter: null,
+    launchYearFilter: '',
+    landFilter: '',
+    launchFilter: '',
   };
 
 
   export const FilterReducer = (state = initialFilterState, action) => {
     switch (action.type) {
       case SET_LAUNCH_YEAR_FILTER:
-        setCookie(null, 'launchYearFilter', action.data, {
-          maxAge: 30 * 24 * 60 * 60,
-          path: '/',
-        })
+        setCookieFunc('launchYearFilter', action.data)
         return {
           ...state,
           launchYearFilter: action.data,
         };
       case SET_LAND_FILTER:
-        setCookie(null, 'landFilter', action.data, {
-          maxAge: 30 * 24 * 60 * 60,
-          path: '/',
-        })
+        setCookieFunc('landFilter', action.data)
         return {
           ...state,
           landFilter: action.data,
         };
       case SET_LAUNCH_FILTER:
-        setCookie(null, 'launchFilter', action.data, {
-          maxAge: 30 * 24 * 60 * 60,
-          path: '/',
-        })
+        setCookieFunc('launchFilter', action.data)
         return {
           ...state,
           launchFilter: action.data,

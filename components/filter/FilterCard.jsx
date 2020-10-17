@@ -4,7 +4,8 @@ import FilterButton from './FilterButton';
 import {getYears} from '../../utils';
 import { useSelector, useDispatch } from "react-redux";
 import {setLandFilter,setLaunchFilter,setLaunchYearFilter} from '../../redux/actions/FilterActions';
-import { parseCookies, setCookie, destroyCookie } from 'nookies';
+import { parseCookies } from 'nookies';
+import { useRouter } from 'next/router';
 
 export default function FilterCard () {
 const options = ['True', 'False'];
@@ -12,19 +13,30 @@ const dispatch = useDispatch();
 const filterState = useSelector((state) => state.FilterReducer);
 const {launchYearFilter, landFilter, launchFilter} = filterState;
 const cookies = parseCookies()
-console.log('cookies', cookies)
-console.log('filterState', filterState)
+const router = useRouter(); 
+// console.log('cookies', cookies)
+// console.log('filterState', filterState)
   useEffect(() => {
-    dispatch(setLaunchYearFilter(cookies.launchYearFilter));
-    dispatch(setLaunchFilter(cookies.launchFilter));
-    dispatch(setLandFilter(cookies.landFilter));
-  },[]);
+    setRouteURL();
+  }, [launchYearFilter, landFilter, launchFilter])
+
+  const setRouteURL = () => {
+    let url = '';
+    url+= '/?company=SpaceX'
+    url += cookies.launchFilter && `&launchFilter=${cookies.launchFilter}`;
+    url += cookies.landFilter && `&landFilter=${cookies.landFilter}`;
+    url += cookies.launchYearFilter && `&launchYearFilter=${cookies.launchYearFilter}`;
+    router.push(url);
+    // router.push(`/?launch_success=${cookies.launchFilter || ''}&land_success=${cookies.landFilter || ''}&launch_year=${cookies.launchYearFilter || ''}`);
+}
 
 const subHeaderText = (subText) => (
+    <>
     <div className={styles.launchText}>
         <div>{subText}</div>
         <hr width='50%'/>
     </div>
+    </>
 )
 const renderLaunchYear = () =>(
     <>
@@ -47,23 +59,26 @@ const renderOptions = (type = '', updatedValue) =>(
     }}
     />
     )}
-    </>
+  </>
 )
 
 return(
-<div className={styles.filterCard}>
+<div className={styles.filterCards}>
     <div className={styles.filterText}>Filters</div>
         {subHeaderText('Launch Year')}
-    <div className={styles.filterButtonParent}>
-        {renderLaunchYear()}
-    </div>
+            <div className={styles.filterButtonParent}>
+                {renderLaunchYear()}
+            </div>
+
     {subHeaderText('Successful Launch')}
     <div className={styles.filterButtonParent}>
         {renderOptions('launch', launchFilter)}
     </div>
+
     {subHeaderText('Successful Landing')}
     <div className={styles.filterButtonParent}>
         {renderOptions('landing', landFilter)}
     </div>
+ 
 </div>)
 }

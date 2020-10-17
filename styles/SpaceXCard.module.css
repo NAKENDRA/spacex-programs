@@ -1,8 +1,121 @@
 .spaceXCard {
-    padding: 1rem;
-    border-radius: 0.25rem;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    margin: 0.5rem 0.5rem;
-}
+    margin: 0 0.5rem;
+  }
+  
+  @media all and (min-width: 700px) {
+    .spaceXCard {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media all and (min-width: 1441px) {
+    .spaceX_parent {
+      max-width: 50vw;
+    }
+  
+    .spaceXCard {
+      justify-content: space-between;
+    }
+  }
+
+
+.subCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.75rem;
+    background: #ffffff;
+    border-radius: 0.25rem;
+    font-size: clamp(1rem, 1rem+1.5vw, 2rem);
+  }
+
+  
+  .subCard_image {
+    background: #eaeaea;
+    margin: 1rem;
+  }
+  
+  .subCard_image img {
+    margin: 0.5rem 0;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .subCard_title {
+    margin: 0.5rem 0 0 0.5rem;
+    font-weight: bold;
+    color: darkblue;
+    align-self: start;
+  }
+  
+  .subCard_field {
+    margin-left: 0.5rem;
+    align-self: start;
+  }
+  
+  .text_value ul {
+    margin: 0;
+    padding: 0 0 0 25px;
+  }
+  
+  .subCard_field:last-child {
+    margin-bottom: 0.3rem;
+  }
+  
+  .text_label {
+    font-weight: bold;
+  }
+  
+  .text_value {
+    color: darkblue;
+  }
+  
+  @media all and (max-width: 1024px) and (min-width: 700px) {
+    .subCard {
+      flex: 0 0 calc(50% - 1rem);
+      margin: 0.75rem 0.5rem 0 0.5rem;
+    }
+  }
+  
+  @media all and (max-width: 1440px) and (min-width: 1024px) {
+    .subCard {
+      flex: 0 0 calc(25% - 1rem);
+      margin: 0.75rem 0.5rem 0 0.5rem;
+      font-size: clamp(0.75rem, 0.75 + 1vw, 1.5rem);
+    }
+  }
+  
+  @media all and (min-width: 1441px) {
+    .subCard {
+      width: 49%;
+      margin-top: 2rem;
+    }
+  
+    .subCard_image {
+      background: #eaeaea;
+      margin: 2rem;
+    }
+  
+    .subCard_image img {
+      margin: 1.5rem;
+    }
+  
+    .subCard_title {
+      margin-left: 1.5rem;
+    }
+  
+    .subCard_field {
+      margin-left: 1.5rem;
+    }
+  
+    .subCard_field:last-child {
+      margin-bottom: 1rem;
+    }
+  
+    .text_value ul {
+      margin-left: 5rem;
+    }
+  }

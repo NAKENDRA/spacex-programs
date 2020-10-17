@@ -1,10 +1,27 @@
-.filterCard {
-    padding: 1rem;
-    border-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    margin: 0.5rem 0.5rem;
+
+.filterCards {
+  display: flex;
+  flex-direction: column;
+  background: #fffefe;
+  margin: 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+@media all and (min-width: 700px) {
+  .filter_cards {
+    margin: 0.75rem 0;
+  }
+}
+
+.filter_card {
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (min-width: 1441px) {
+  .filter_card {
+    width: 50vw;
+  }
 }
 
 .filterText {
@@ -17,6 +34,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    font-size: clamp(0.5rem, 0.5rem + 1vw, 1.5rem);
   }
 
   .filterButtonParent {
@@ -27,18 +46,35 @@
 
   .filterButton {
     display: flex;
-    width: 40%;
+    min-width: 80%;
     color: black;
-    font-size: 1rem;
+    font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
     font-weight: bold;
     border: none;
     border-radius: 0.25rem;
     padding: 0.5rem 0.5rem;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     margin: 0.5rem; 
   }
   
+  @media all and (min-width: 700px) {
+    .filterButton {
+      display: flex;
+      min-width: 35%;
+      color: black;
+      font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
+      font-weight: bold;
+      border: none;
+      border-radius: 0.25rem;
+      padding: 0.5rem 0.5rem;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin: 0.5rem; 
+    }
+  }
   .filterButton_Inactive {
     background: lightgreen;
   }
@@ -46,3 +82,5 @@
   .filterButton_Active {
     background: green;
   }
+  
+
