@@ -20,7 +20,6 @@ export function getData(URL){
       try {
         const response = await fetch(URL);
         const data = await response.json();
-        console.log('data', data)
         if (data.error) {
           dispatch(setError("Error Response From API"));
         } else {

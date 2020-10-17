@@ -24,9 +24,6 @@ export default function SpaceXCard() {
         url += launchYearFilter && `&launch_year=${launchYearFilter}`;
         return url;
     }
-
-
-console.log('spacexdata', spaceXData)
 if(loading){
     return <div>
         Loading

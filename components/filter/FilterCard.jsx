@@ -13,9 +13,7 @@ const dispatch = useDispatch();
 const filterState = useSelector((state) => state.FilterReducer);
 const {launchYearFilter, landFilter, launchFilter} = filterState;
 const cookies = parseCookies()
-const router = useRouter(); 
-// console.log('cookies', cookies)
-// console.log('filterState', filterState)
+const router = useRouter();
   useEffect(() => {
     setRouteURL();
   }, [launchYearFilter, landFilter, launchFilter])
@@ -23,9 +21,15 @@ const router = useRouter();
   const setRouteURL = () => {
     let url = '';
     url+= '/?company=SpaceX'
-    url += cookies.launchFilter && `&launchFilter=${cookies.launchFilter}`;
-    url += cookies.landFilter && `&landFilter=${cookies.landFilter}`;
-    url += cookies.launchYearFilter && `&launchYearFilter=${cookies.launchYearFilter}`;
+    if(cookies.launchFilter){
+        url += cookies.launchFilter && `&launchFilter=${cookies.launchFilter}`;
+    }
+    if(cookies.landFilter){
+        url += cookies.landFilter && `&landFilter=${cookies.landFilter}`;
+    }
+    if(cookies.launchYearFilter){
+        url += cookies.launchYearFilter && `&launchYearFilter=${cookies.launchYearFilter}`;
+    }
     router.push(url);
     // router.push(`/?launch_success=${cookies.launchFilter || ''}&land_success=${cookies.landFilter || ''}&launch_year=${cookies.launchYearFilter || ''}`);
 }
