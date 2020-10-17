@@ -8,11 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@babel/parser": "^7.12.3",
     "next": "9.5.5",
     "next-redux-wrapper": "^6.0.2",
     "nookies": "^2.4.0",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
