@@ -1,0 +1,48 @@
+.filterCard {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 0.5rem 0.5rem;
+}
+
+.filterText {
+    display: block;
+    font-weight: bold
+  }
+  
+  .launchText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .filterButtonParent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .filterButton {
+    display: flex;
+    width: 40%;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.5rem;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0.5rem; 
+  }
+  
+  .filterButton_Inactive {
+    background: lightgreen;
+  }
+  
+  .filterButton_Active {
+    background: green;
+  }
