@@ -6,3 +6,5 @@ Front-end application which would help users list and browse all launches by Spa
     Redux
 
 ## Cookies is being used , to store filter state, and update the data after page refresh, based on filters already selected.
+
+Deployed App URL: https://spacex-appv1.herokuapp.com/

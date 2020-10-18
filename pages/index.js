@@ -25,15 +25,6 @@ export default function SpaceX() {
       <header>
         <h1 className={styles.headerElement}>SpaceX Launch Programs</h1>
       </header>
-      <Head>
-        <title>SpaceX Programs</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-            name="description"
-            content="SpaceX Launch Program "
-          />
-      </Head>
-
       <main className={styles.main}>
         <div className={styles.leftElement}>
         <FilterCard/>
