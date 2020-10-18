@@ -20,18 +20,18 @@ const router = useRouter();
 
   const setRouteURL = () => {
     let url = '';
-    url+= '/?company=SpaceX'
-    if(cookies.launchFilter){
-        url += cookies.launchFilter && `&launchFilter=${cookies.launchFilter}`;
-    }
-    if(cookies.landFilter){
-        url += cookies.landFilter && `&landFilter=${cookies.landFilter}`;
-    }
-    if(cookies.launchYearFilter){
-        url += cookies.launchYearFilter && `&launchYearFilter=${cookies.launchYearFilter}`;
-    }
-    router.push(url);
-    // router.push(`/?launch_success=${cookies.launchFilter || ''}&land_success=${cookies.landFilter || ''}&launch_year=${cookies.launchYearFilter || ''}`);
+    // url+= '/?company=SpaceX'
+    // if(cookies.launchFilter){
+    //     url += cookies.launchFilter && `&launchFilter=${cookies.launchFilter}`;
+    // }
+    // if(cookies.landFilter){
+    //     url += cookies.landFilter && `&landFilter=${cookies.landFilter}`;
+    // }
+    // if(cookies.launchYearFilter){
+    //     url += cookies.launchYearFilter && `&launchYearFilter=${cookies.launchYearFilter}`;
+    // }
+    // router.push(url);
+    router.push(`/?launch_success=${cookies.launchFilter || ''}&land_success=${cookies.landFilter || ''}&launch_year=${cookies.launchYearFilter || ''}`);
 }
 
 const subHeaderText = (subText) => (
