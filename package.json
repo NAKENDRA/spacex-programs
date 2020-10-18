@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "eslint --ext .js ./",
-    "lint.fix": "eslint --fix --ext .js ./",
-    "test": "jest"
+    "lint.fix": "eslint --fix --ext .js ./"
   },
   "dependencies": {
     "@babel/parser": "^7.12.3",
@@ -23,15 +22,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@types/jest": "^26.0.14",
     "eslint": "^7.11.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.21.4",
-    "husky": "^4.3.0",
-    "jest": "^26.5.3",
-    "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2"
+    "eslint-plugin-react": "^7.21.4"
   }
 }
