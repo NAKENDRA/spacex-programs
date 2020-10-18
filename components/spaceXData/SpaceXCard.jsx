@@ -19,27 +19,27 @@ export default function SpaceXCard() {
     const setAPIURL = () => {
     let url = API_URL;
         url+= '/?limit=100'
-        url += launchFilter && `&launch_success=${launchFilter}`;
-        url += landFilter && `&land_success=${landFilter}`;
-        url += launchYearFilter && `&launch_year=${launchYearFilter}`;
+        url += launchFilter && `&launch_success=${launchFilter.toLowerCase()}`;
+        url += landFilter && `&land_success=${landFilter.toLowerCase()}`;
+        url += launchYearFilter && `&launch_year=${launchYearFilter.toLowerCase()}`;
         return url;
     }
 if(loading){
-    return <div>
-        Loading
-    </div>
+    return <h1 className={styles.loaderElement}>
+        Loading...
+    </h1>
 }
 
 if(error){
-    return <div>
+    return<h1 className={styles.loaderElement}>
         Error
-    </div>
+    </h1>
 }
 
 if(!data.length){
-    return <div>
+    return <h1 className={styles.loaderElement}>
         No Data
-    </div>
+    </h1>
 }
 return(
     <div className={styles.spaceX_parent}>

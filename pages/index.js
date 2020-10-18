@@ -23,7 +23,7 @@ export default function SpaceX() {
   return (
     <div className={styles.container}>
       <header>
-        <h1>SpaceX Launch Programs</h1>
+        <h1 className={styles.headerElement}>SpaceX Launch Programs</h1>
       </header>
       <Head>
         <title>SpaceX Programs</title>

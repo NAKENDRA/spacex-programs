@@ -46,7 +46,7 @@
 
   .filterButton {
     display: flex;
-    min-width: 80%;
+    min-width: 35%;
     color: black;
     font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
     font-weight: bold;

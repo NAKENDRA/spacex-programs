@@ -3,7 +3,12 @@
     flex-direction: column;
     margin: 0 0.5rem;
   }
-  
+  .loaderElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    }
   @media all and (min-width: 700px) {
     .spaceXCard {
       flex-direction: row;
